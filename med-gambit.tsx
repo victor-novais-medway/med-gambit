@@ -25,7 +25,7 @@ import logo from "./assets/logo.png";
 // ─────────────────────────────────────────────
 // Constants
 // ─────────────────────────────────────────────
-const TELEGRAM_URL = "https://t.me/med_gambit_bot";
+const TELEGRAM_URL = "https://web.telegram.org/k/#@med_gambit_bot";
 const EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const PROBLEMS = [
