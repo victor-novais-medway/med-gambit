@@ -115,7 +115,7 @@ function RevealLine({ children, delay = 0, className = "" }: MotionChildProps) {
   const shouldReduce = useReducedMotion();
 
   return (
-    <div ref={ref} className={`overflow-hidden ${className}`}>
+    <div ref={ref} className={className}>
       <motion.div
         initial={shouldReduce ? false : { y: "108%", opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : undefined}
@@ -369,7 +369,7 @@ export default function App() {
               "Direto no Telegram.",
             ].map((line, i) => (
               <RevealLine key={i} delay={0.06 + i * 0.1}>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#111111] leading-[1.04] tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#111111] leading-[1.15] tracking-tight">
                   {line}
                 </h1>
               </RevealLine>
@@ -506,11 +506,11 @@ export default function App() {
             </h2>
           </RevealLine>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
             {STEPS.map(({ step, Icon, title, description }, i) => (
-              <FadeUp key={i} delay={0.1 + i * 0.12}>
+              <FadeUp key={i} delay={0.1 + i * 0.12} className="h-full">
                 <motion.div
-                  className="relative bg-white rounded-3xl p-8 sm:p-10 shadow-sm overflow-hidden"
+                  className="relative bg-white rounded-3xl p-8 sm:p-10 shadow-sm overflow-hidden h-full"
                   whileHover={
                     shouldReduce
                       ? undefined
@@ -666,12 +666,12 @@ export default function App() {
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <div className="space-y-1 mb-6 sm:mb-8">
             <RevealLine>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.04] tracking-tight">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.15] tracking-tight">
                 Comece hoje.
               </h2>
             </RevealLine>
             <RevealLine delay={0.08}>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#1DB954] leading-[1.04] tracking-tight">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#1DB954] leading-[1.15] tracking-tight">
                 É grátis.
               </h2>
             </RevealLine>
